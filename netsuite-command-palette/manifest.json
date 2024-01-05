@@ -1,0 +1,38 @@
+{
+    "manifest_version": 3,
+    "name": "NetSuite Command Palette - Public",
+    "version": "1.0",
+    "description": "A command palette for quickly accessing NetSuite actions.",
+    "permissions": [
+        "activeTab",
+        "scripting",
+        "tabs",
+        "bookmarks",
+        "storage"
+    ],
+    "content_scripts": [
+        {
+            "matches": [
+                "*://*.netsuite.com/*"
+            ],
+            "js": [
+                "content.js"
+            ],
+            "css": [
+                "command-palette.css"
+            ],
+            "run_at": "document_idle"
+        }
+    ],
+    "web_accessible_resources": [
+        {
+            "resources": [
+                "command-palette.css",
+                "command-palette.js"
+            ],
+            "matches": [
+                "*://*.netsuite.com/*"
+            ]
+        }
+    ]
+}

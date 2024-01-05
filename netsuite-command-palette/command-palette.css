@@ -1,0 +1,208 @@
+* {
+    --primary-color: #000000;
+    --secondary-color: #2f3140;
+    --highlight-background-color: #161520;
+}
+
+#command-palette {
+    font-family: 'Roboto', sans-serif;
+    background-color: #888;
+    border-radius: 5px;
+    width: 40%;
+    position: absolute;
+    min-width: 500px;
+    margin: 0 auto;
+    text-align: left;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    top: 200px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 300000;
+    font-size: 14px;
+    max-height: 500px;
+    overflow-y: scroll;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    display: flex;
+    flex-direction: column;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+#search-input {
+    padding: 14px;
+    border: none;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    margin-bottom: 0px;
+    background-color: var(--secondary-color);
+    color: #ffffff;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+    border-bottom: 2px solid var(--highlight-background-color);
+}
+
+#command-palette div:focus-visible {
+    outline: none !important;
+}
+
+#command-list,
+#select-list {
+    width: calc(100%-10px);
+    list-style: none;
+    padding: 10px;
+    margin: 0;
+    background: var(--secondary-color);
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    max-height: 500px;
+    overflow-y: scroll;
+}
+
+#command-list li,
+#select-list li {
+    border-radius: 5px;
+    padding: 5px;
+    cursor: pointer;
+    background-color: var(--secondary-color);
+    color: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+#command-list li:hover,
+#command-list li.highlighted,
+#select-list li:hover {
+    background-color: var(--highlight-background-color);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+#command-list li.highlighted:before,
+#command-list li:hover:before {
+    content: " ";
+    margin-right: 5px;
+}
+
+.select-table {
+    background: var(--secondary-color);
+    color: #FFFFFF !important;
+    border-collapse: collapse;
+}
+
+.select-table td,
+th {
+    padding: 3px 5px;
+}
+
+.select-table th {
+    font-weight: bold !important;
+    padding: 10px 5px;
+    background-color: var(--highlight-background-color) !important;
+}
+
+.select-table tr {
+    border-bottom: 1px solid var(--highlight-background-color);
+}
+
+.select-table tr:hover {
+    background-color: var(--highlight-background-color);
+}
+
+.select-list-label {
+    margin-left: 5px;
+}
+
+.select-list-input {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 12px;
+    color: #FFFFFF !important;
+    background: var(--secondary-color);
+    transition: border-color 0.3s ease-in-out;
+}
+
+.selection-buttons {
+    position: sticky;
+    top: 0;
+    background: var(--secondary-color);
+}
+
+.copy-button,
+.select-button {
+    margin: 3px;
+    padding: 5px;
+    background: var(--highlight-background-color);
+    color: white;
+    cursor: pointer;
+    text-align: center;
+    font-weight: bold;
+    border: 1px solid white;
+    border-radius: 3px;
+}
+
+.copy-button {
+    float: right;
+}
+
+.copy-button:hover,
+.select-button:hover {
+    background: var(--primary-color);
+}
+
+.toast {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--secondary-color);
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 9999;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.toast.requirejs {
+    background-color: firebrick !important;
+}
+
+.toast.show {
+    opacity: 1;
+}
+
+.toast-content {
+    display: flex;
+    align-items: center;
+}
+
+.toast-message {
+    margin-left: 10px;
+}
+
+/* Optional: Add animation for the toast */
+@keyframes slideIn {
+    from {
+        transform: translate(-50%, -150%);
+    }
+
+    to {
+        transform: translate(-50%, -50%);
+    }
+}
+
+@keyframes slideOut {
+    from {
+        transform: translate(-50%, -50%);
+    }
+
+    to {
+        transform: translate(-50%, -150%);
+    }
+}

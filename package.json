@@ -1,0 +1,31 @@
+{
+  "name": "netsuite-command-palette",
+  "version": "1.0.0",
+  "description": "Chrome Extension to add a Command Palette to NetSuite for power users",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint . --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eric-birdsall/netsuite-command-palette.git"
+  },
+  "author": "Eric Birdsall",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/eric-birdsall/netsuite-command-palette/issues"
+  },
+  "homepage": "https://github.com/eric-birdsall/netsuite-command-palette#readme",
+  "devDependencies": {
+    "eslint": "^8.17.0",
+    "eslint-plugin-requirejs": "4.0.1",
+    "lint-staged": "^13.0.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-standard": "^17.0.0"
+  },
+  "lint-staged": {
+    "src/**/*.{js}": [
+      "eslint --fix"
+    ]
+  }
+}

@@ -362,7 +362,7 @@ COMMAND_PALETTE.handleCommandSelection = ( command, event ) => {
 // Handle arrow up key press
 COMMAND_PALETTE.handleArrowUp = ( highlightedIndex, numberOfCommands ) => {
     if ( COMMAND_PALETTE.searchInput.value === "" ) {
-        COMMAND_PALETTE.searchInput.value = COMMAND_PALETTE.lastUsedCommand;
+        COMMAND_PALETTE.searchInput.value = COMMAND_PALETTE.lastUsedCommand || "";
         COMMAND_PALETTE.handleSearchInput();
     }
     if ( highlightedIndex > 0 ) {
